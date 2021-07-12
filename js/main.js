@@ -9,6 +9,16 @@ for (let button of buttons) {
     button.addEventListener('click', function () {
         buttons.forEach((i) => i.classList.remove('active'));
         this.classList.toggle('active');
+        if (leftBlock.style.width == '320px') {
+            let position = 320;
+            setInterval(() => {
+                if (position !== 0) {
+                    position -= 10;
+                    leftBlock.style.width = `${position}px`;
+                }
+                clearInterval();
+            }, 3);
+        }
     });
 };
 
